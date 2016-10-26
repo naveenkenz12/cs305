@@ -1,0 +1,42 @@
+
+4.) cc1.din
+	N for which first non-compulsory miss = 225
+		(no non-cumpulsoray miss in case of N = 224, and 1 non-cumpulsory miss in case of N = 225)
+
+	spice.din
+	N for which first nun-cumpolsory miss = 2072
+
+	tex.din
+	N for which first non-cumpolsory miss = 82
+
+5.) plot : 5.png
+
+		explanation :
+			Direct mapping.
+			As the cache size increases, the number of memory address that is mapped to a particular address decreases.
+			This decreases the number of non-cumpulsory misses. However number of compulsory missies at start will be there
+			for any value of cache size. Thus, when number of nun-cumpulsory mises tends to zero, total demand misses will reach
+			to a minimum saturation level due to cumpulsory misses.
+
+
+6.)	plot : 6.png
+		
+		2 way associativity, cache size = 8 KB
+
+		explanation :
+			With increase in the block size, the number of instruction fetched at a time increases, this decrese the cache miss
+			(both cumpulsory and non-cumpolsary) due to satial locality of code and data, and reaches the minimum optimal value 
+			possible at the specified value of associativity and cache size.
+
+			But after certain block size(about 256 Bytes), cache miss rate start increasing, extra data are cached at a time when block 
+			size. Total cache size of 4KB here gets filled withe data even if that is not need. But the data which is in reality needed
+			is not cached and thus there is more cache miss.
+	
+7.) plot : 7.png
+		
+		explanation : 
+			As the associativity(number of blocks per set) increases, the rate of cache miss decreases. As associativity increases, conflict miss decreases.
+			
+			Later with the increase in associativity beyond a certain limit at the specified value of cache size and block size, the miss rate remains almost same, as number of blocks per set increases.
+
+			Later with much more increase in associativity, conflict increases a bit because of less number of distinct sets.

@@ -1,0 +1,20 @@
+3. Part of QtSpim Window:
+	1. FP Regs
+	2. nt Regs [16]
+	3. Data
+	4. Text
+	5. Console Window
+
+4.	Address at which program begins = [00400024]
+	
+	'li' is a pseudo-instruction. It gets translated to 'ori'.
+
+	machine code of all instruction:
+
+	machine code     	instruction         opcode
+	340d0001 		ori $13, $0, 1      	001101
+	340e0002		ori $14, $0, 2     	001101
+	01ae6020		add $12, $13, $14  	000000
+	3402000a 		ori $2, $0, 10 		001101
+	0000000c		syscall			000000
+

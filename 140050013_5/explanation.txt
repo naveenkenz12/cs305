@@ -1,0 +1,57 @@
+1.c.	Exceptions
+
+1.	Arithmetic Overflow Exceptions(exception 12)
+		Code:
+			.text
+			main:
+
+				li $t0, -2147483600
+				li $t1, 2147483600
+
+				sub $a0, $t0, $t1	#a0 = t0-t1
+
+				li $v0, 10	#exit
+				syscall
+
+		Error:	Exception 12 [Arithmetic overflow]  occurred and ignored
+
+		Cause: subtracting 2147483600 from -2147483600 causes arithmetic ovberflow exception as the result can not be accomodated in a 32 bit register.
+
+2.	Load from illegal address(exception 4):
+		Code:
+			.text
+			main:
+
+				lw $t0, 8565589
+				li $v0, 10	#exit
+				syscall
+
+		Error: Exception 4 [Address error in inst/data fetch] occured and ignored
+
+		Cause:	Unable to load word from an illegal address
+
+3.	Store into illegal address(exception 5):
+		Code:
+			.text
+			main:
+				addi $t0, $0, 10
+				sw $t0, 8565589	#store t0 in address 8565589
+				li $v0, 10	#exit
+				syscall
+
+		Error: Exception 5 [Address error in store] occured and ignored
+
+		Cause:	Unable to store data into an illegal address
+
+4.	Breakpoint Exception(exception 9):
+		Code:
+			.text
+			main:
+				break 100
+
+				li $v0, 10	#exit
+				syscall
+
+		Error: Exception 9 [Breakpoint] occured and ignored
+
+		Cause:	break and stop the program at break statement

@@ -1,0 +1,27 @@
+Introduction to cross compiler
+
+1.	A cross compiler is a compiler that is capable of creating executable code for a platform other than the platform on which the compiler is running.
+	eg. a compiler running on a linux machine and generating code for MIPS is a cross compiler.
+
+2.	The host platform is the platform where the output artifacts from the compiler will be executed.
+
+3.	The target platform is the platform that is used when cross compiling cross compilers. It represents what type of object code, the package itself will produce.
+
+host plateform : linux(x86)
+target platform : mips
+
+Instruction Count
+
+1. written assembly code
+		gcd_basic.s		81
+		fibonacci_basic.s	2172	
+
+2. non optimized code
+		gcd_noopt.s		153
+		fibonacci_noopt.s		3242
+
+3. optimized 
+
+
+Differences
+1. compiler code saves frame pointer  in stack.All caller and callee registers are saved in stack

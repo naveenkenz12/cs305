@@ -1,0 +1,20 @@
+1.	The bnez statement requires its input to be ready before ID stage, so it waits for its input to get ready.
+
+2.	in statement: addi r3,r0,5, the value of r3 is caluculated in intEX state, but the next statement bnez r3, Loop requires its input to be ready in ID stage only, which is not ready by the previous statement till now. So it makes R-Stall and wait for r3 to be ready (waits for previous statement executing intEX stage).
+
+3.	
+
+4.
+
+5.	in statement: addi r3,r0,5, the value of r3 is caluculated in intEX state, but the next statement bnez r3, Loop requires its input to be ready in ID stage only, which is not ready by the previous statement till now. So it makes R-Stall and wait for r3 to be ready (waits for previous statement executing intEX stage). And when the input is ready it is forwarded from intEX stage of statement 1 to ID stage of statement 2.
+
+6.	Not Possible
+	after load word, when bnez is used ,it not taking the value from Mem stage rather than it is waiting (R-stall), for 2 clock-cycle for its input in ID stage, which might be architecture dependent.
+
+7.	39 steps
+Divide two registers (r2=r2/r1) and again divide same(r2=r2/r1) and then exits, it will T-stall(waits) for clearing the pipeline before exits and thus waits for 39 clock cycles.
+
+8.	18 steps
+	first divide and use the result in bnez, division takes this much step in intEx stage, and thus the nez waits for 18 steps to get its input ready before its ID stage.
+
+9.	addf is taking 2 clock cycle in intEX stage, so it is waiting waw-stall before intEX of next statem,ent

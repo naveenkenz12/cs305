@@ -1,0 +1,11 @@
+3. single cycle = 153
+Multiple cycle = 647
+Multi Cycle is 1.18238021638 times faster.
+
+let clock period per instruction= t (in single cycle implementation)
+let clock period per instruction= t/5 (in multi cycle implementation)
+
+time for 153 instructions in single cycle = 153*t
+time for 647 instructions in single cycle = 647*t/5
+
+ratio = 153*t*5/(647*t) = 1.1823(approx)
